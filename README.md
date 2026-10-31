@@ -1,6 +1,6 @@
 # Resume Maker
 
-A JavaScript-only React application scaffold powered by Vite and SCSS. The app is intentionally a starter shell; resume editing features have not been added.
+A JavaScript-only React application powered by Vite and SCSS. The Dashboard currently uses temporary in-memory mock resumes; resume editing and persistence have not been implemented.
 
 ## Run locally
 
@@ -27,13 +27,17 @@ src/
       AppLayout/         Sidebar, header, Outlet, and responsive layout
       Header/            Route title and breadcrumbs
       Sidebar/           Primary navigation and collapse behavior
+    dashboard/           Dashboard sections, summary cards, resume cards, and empty state
     ui/
       PagePlaceholder/   Reusable placeholder page content
   constants/
     navigation.js        Shared navigation labels, paths, and icons
-  pages/                 Dashboard and section placeholder routes
+  pages/
+    Dashboard/           Dashboard composition and temporary mock data
+    ...                  Remaining section placeholder routes
   store/                 Redux store configuration
   styles/                Global SCSS and shared style variables
+  utils/                 Shared helpers such as date formatting
   App.jsx                Top-level composition of the application
   main.jsx               React entry point
 index.html               Vite HTML entry
@@ -42,4 +46,4 @@ vite.config.js           Vite configuration
 
 `App.jsx` defines the Dashboard (`/`), My Resumes (`/resumes`), Create Resume (`/create-resume`), Templates (`/templates`), and Settings (`/settings`) routes. `AppLayout` renders the shared sidebar and header around the route `Outlet`. Component styles use SCSS Modules; `src/styles/main.scss` contains only global defaults.
 
-The application entry point configures React Router and the Redux provider. Redux Toolkit is wired to an empty root reducer until app state is needed. `sass` compiles SCSS; `lucide-react` supplies navigation icons. Resume creation, persistence, and other application features have not been implemented.
+The application entry point configures React Router and the Redux provider. Redux Toolkit is wired to an empty root reducer until app state is needed. `sass` compiles SCSS; `lucide-react` supplies icons. The Dashboard's sample resume list and delete interaction are in-memory only and reset on reload. Resume creation, editing, and persistence have not been implemented.
