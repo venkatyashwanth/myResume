@@ -28,6 +28,7 @@ src/
     ui/                  Reusable presentational components
   hooks/                 Shared React hooks
   pages/                 Page-level components
+  store/                 Redux store configuration
   styles/                Global SCSS and shared style variables
   utils/                 Framework-independent helpers
   App.jsx                Top-level composition of the application
@@ -37,3 +38,5 @@ vite.config.js           Vite configuration
 ```
 
 `App.jsx` composes the layout and page rather than containing the whole application. The global stylesheet is `src/styles/main.scss`.
+
+The application entry point configures React Router and the Redux provider. Redux Toolkit is wired to an empty root reducer until app state is needed. `sass` compiles SCSS; `lucide-react`, `uuid`, and `idb` are installed for use by future UI, ID generation, and IndexedDB code.
