@@ -7,7 +7,12 @@ function Header({ isMobileMenuOpen, onMenuToggle }) {
   const { pathname } = useLocation()
   const currentPath = pathname.replace(/\/+$/, '') || '/'
   const currentPage =
-    navigationItems.find((item) => item.path === currentPath) ?? navigationItems[0]
+    navigationItems.find(
+      (item) =>
+        item.path === currentPath ||
+        (item.path === '/create-resume' &&
+          currentPath.startsWith('/create-resume/')),
+    ) ?? navigationItems[0]
   const isDashboard = currentPage.path === '/'
 
   return (

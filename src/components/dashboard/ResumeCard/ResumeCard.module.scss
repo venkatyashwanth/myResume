@@ -1,0 +1,180 @@
+.card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e6e9ee;
+  border-radius: 10px;
+  background: #fff;
+  transition:
+    border-color 150ms ease,
+    transform 150ms ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: #cbd4e1;
+  }
+}
+
+.preview {
+  display: grid;
+  height: 136px;
+  place-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid #edf0f4;
+  background: #f7f8fb;
+}
+
+.paper {
+  display: flex;
+  width: 94px;
+  height: 118px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 12px 11px;
+  border: 1px solid #e6e9ee;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgb(25 35 50 / 5%);
+}
+
+.previewAvatar {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 1px;
+  border-radius: 50%;
+  background: #dce6f6;
+}
+
+.previewLine {
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 3px;
+  background: #e8ebf0;
+}
+
+.previewTitle {
+  width: 68%;
+  height: 4px;
+  background: #98a8c1;
+}
+
+.previewShort {
+  width: 62%;
+}
+
+.previewSection {
+  width: 48%;
+  height: 4px;
+  margin-top: 3px;
+  background: #c7d0de;
+}
+
+.content {
+  min-width: 0;
+  padding: 16px;
+}
+
+.titleRow {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 9px;
+}
+
+.fileIcon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 7px;
+  background: #f2f5fa;
+  color: #64748b;
+}
+
+.title {
+  overflow: hidden;
+  margin: 0;
+  color: #263246;
+  font-size: 13px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.modified {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 13px 0 0;
+  color: #818b9a;
+  font-size: 11px;
+}
+
+.cardFooter {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #edf0f4;
+}
+
+.template {
+  overflow: hidden;
+  padding: 5px 8px;
+  border-radius: 5px;
+  background: #f3f5f8;
+  color: #657185;
+  font-size: 10px;
+  font-weight: 550;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 4px;
+}
+
+.actionButton {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: #647084;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    border-color: #e5e9ef;
+    background: #f7f8fa;
+    color: #2457bf;
+  }
+}
+
+.deleteButton:hover {
+  border-color: #f3d9d9;
+  background: #fff5f5;
+  color: #bd4444;
+}
+
+.card :is(a, button):focus-visible {
+  outline: 3px solid #91b4ff;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+}

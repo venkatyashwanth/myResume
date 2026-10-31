@@ -13,6 +13,7 @@ function App() {
         <Route index element={<Dashboard />} />
         <Route path="resumes" element={<MyResumes />} />
         <Route path="create-resume" element={<CreateResume />} />
+        <Route path="create-resume/:resumeId" element={<CreateResume />} />
         <Route path="templates" element={<Templates />} />
         <Route path="settings" element={<Settings />} />
         <Route path="*" element={<Navigate to="/" replace />} />
