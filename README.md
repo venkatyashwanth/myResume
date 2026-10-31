@@ -22,21 +22,24 @@ Useful commands:
 ```text
 public/                  Static files served as-is
 src/
-  assets/                Imported images, icons, and other source assets
   components/
-    layout/              Shared page and application layout components
-    ui/                  Reusable presentational components
-  hooks/                 Shared React hooks
-  pages/                 Page-level components
+    layout/
+      AppLayout/         Sidebar, header, Outlet, and responsive layout
+      Header/            Route title and breadcrumbs
+      Sidebar/           Primary navigation and collapse behavior
+    ui/
+      PagePlaceholder/   Reusable placeholder page content
+  constants/
+    navigation.js        Shared navigation labels, paths, and icons
+  pages/                 Dashboard and section placeholder routes
   store/                 Redux store configuration
   styles/                Global SCSS and shared style variables
-  utils/                 Framework-independent helpers
   App.jsx                Top-level composition of the application
   main.jsx               React entry point
 index.html               Vite HTML entry
 vite.config.js           Vite configuration
 ```
 
-`App.jsx` composes the layout and page rather than containing the whole application. The global stylesheet is `src/styles/main.scss`.
+`App.jsx` defines the Dashboard (`/`), My Resumes (`/resumes`), Create Resume (`/create-resume`), Templates (`/templates`), and Settings (`/settings`) routes. `AppLayout` renders the shared sidebar and header around the route `Outlet`. Component styles use SCSS Modules; `src/styles/main.scss` contains only global defaults.
 
-The application entry point configures React Router and the Redux provider. Redux Toolkit is wired to an empty root reducer until app state is needed. `sass` compiles SCSS; `lucide-react`, `uuid`, and `idb` are installed for use by future UI, ID generation, and IndexedDB code.
+The application entry point configures React Router and the Redux provider. Redux Toolkit is wired to an empty root reducer until app state is needed. `sass` compiles SCSS; `lucide-react` supplies navigation icons. Resume creation, persistence, and other application features have not been implemented.

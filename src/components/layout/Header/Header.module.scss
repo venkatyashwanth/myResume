@@ -1,0 +1,93 @@
+.header {
+  display: flex;
+  min-height: 82px;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 32px;
+  border-bottom: 1px solid #e6e9ee;
+  background: #fff;
+}
+
+.heading {
+  min-width: 0;
+}
+
+.title {
+  overflow: hidden;
+  margin: 0;
+  color: #202b3c;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.breadcrumbs {
+  margin-top: 5px;
+  color: #7a8494;
+  font-size: 12px;
+
+  ol {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: #2457bf;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+
+  [aria-current='page'] {
+    color: #596579;
+  }
+}
+
+.separator {
+  display: flex;
+  color: #a4acb8;
+}
+
+.mobileMenuButton {
+  display: none;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #e1e5eb;
+  border-radius: 8px;
+  background: #fff;
+  color: #455166;
+  cursor: pointer;
+
+  &:hover {
+    background: #f5f7fa;
+  }
+}
+
+.header :is(button, a):focus-visible {
+  outline: 3px solid #91b4ff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+  .header {
+    min-height: 72px;
+    padding: 12px 18px;
+  }
+
+  .mobileMenuButton {
+    display: grid;
+  }
+}
