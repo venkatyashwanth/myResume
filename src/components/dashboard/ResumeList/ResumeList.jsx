@@ -5,6 +5,12 @@ import ResumeCard from '../ResumeCard/ResumeCard.jsx'
 import styles from './ResumeList.module.scss'
 
 function ResumeList({ resumes, onDeleteResume }) {
+  const sortedResumes = [...resumes].sort(
+    (firstResume, secondResume) =>
+      new Date(secondResume.updatedAt).getTime() -
+      new Date(firstResume.updatedAt).getTime(),
+  )
+
   return (
     <section className={styles.section} aria-labelledby="recent-resumes-title">
       <div className={styles.sectionHeader}>
@@ -16,7 +22,7 @@ function ResumeList({ resumes, onDeleteResume }) {
             Pick up where you left off.
           </p>
         </div>
-        {resumes.length > 0 && (
+        {sortedResumes.length > 0 && (
           <Link className={styles.viewAll} to="/resumes">
             View all
             <ArrowRight aria-hidden="true" size={15} />
@@ -24,11 +30,11 @@ function ResumeList({ resumes, onDeleteResume }) {
         )}
       </div>
 
-      {resumes.length === 0 ? (
+      {sortedResumes.length === 0 ? (
         <EmptyResumesState />
       ) : (
         <div className={styles.grid} aria-live="polite">
-          {resumes.map((resume) => (
+          {sortedResumes.map((resume) => (
             <ResumeCard
               key={resume.id}
               resume={resume}
